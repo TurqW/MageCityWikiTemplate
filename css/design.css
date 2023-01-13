@@ -19,11 +19,12 @@
 }
 #dokuwiki__header h1 {
     margin-bottom: 0;
-    font-size: 1.5em;
+    font-size: 2.5em;
+    background-color: inherit;
 }
 #dokuwiki__header h1 a {
     text-decoration: none;
-    color: __link__;
+    color: __text__;
     background-color: inherit;
 }
 #dokuwiki__header p.claim {
@@ -35,17 +36,17 @@
 }
 
 #dokuwiki__header .tools {
-    margin-bottom: 2.1em;
+    margin-bottom: 0;
 }
 #dokuwiki__header .tools ul {
     margin-bottom: 0;
+    padding: 0;
 }
 #dokuwiki__header .tools ul li {
     display: inline;
 }
 
 #dokuwiki__header form.search {
-    margin: .5em 0 0;
     display: block;
 }
 #dokuwiki__header form.search #qsearch__in {
@@ -59,10 +60,12 @@
 
 #dokuwiki__header div.breadcrumbs {
     margin-bottom: .3em;
+    background-color: __background_alt__;
+    border-radius: 1em;
+    padding: .75em;
 }
 #dokuwiki__header div.breadcrumbs a {
     color: __existing__;
-    background-color: inherit;
 }
 
 
@@ -124,7 +127,6 @@
 }
 #dokuwiki__usertools ul,
 #dokuwiki__pagetools ul {
-    /* imitate #dokuwiki__site */
     margin: 0 auto;
     max-width: __site_width__;
     padding: 0 1em;
@@ -139,7 +141,7 @@
 }
 
 /*____________ page tools ____________*/
-
+/*
 #dokuwiki__pagetools {
     position: fixed;
     bottom: 0;
@@ -153,28 +155,28 @@
     display: inline;
     margin: 0 1.5em 0 0;
 }
-/* before Greebo: */
 #dokuwiki__pagetools ul li a.action.top,
-/* since Greebo: */
 #dokuwiki__pagetools ul li.action.top a {
     float: right;
 }
-/* before Greebo: */
 [dir=rtl] #dokuwiki__pagetools ul li a.action.top,
-/* since Greebo: */
 [dir=rtl] #dokuwiki__pagetools ul li.action.top a {
     float: left;
 }
 
-/* hide background images from menu items inserted via plugins */
 #dokuwiki__pagetools ul li a {
     background-image: none !important;
 }
 #dokuwiki__pagetools ul li a::before {
     content: none !important;
 }
-
-
+*/
+#dokuwiki__pagetools div.tools ul li a svg {
+    background: __background_alt__;
+    border-radius: .75em;
+    padding: .25em;
+    margin: 0;
+}
 /* sidebar
 ********************************************************************/
 
@@ -251,7 +253,7 @@
 ********************************************************************/
 
 .dokuwiki .wrapper {
-    margin-bottom: 2.8em;
+    margin-bottom: 1em;
 }
 
 #dokuwiki__footer {
@@ -259,7 +261,10 @@
 }
 
 #dokuwiki__footer .doc {
-    float: left;
+    background-color: __background_neu__;
+    color: __text_neu__;
+    border-radius: 1em;
+    padding: .75em;
 }
 #dokuwiki__footer .top {
     float: right;
@@ -272,3 +277,57 @@
     margin: 0 .5em 0 0;
     float: none;
 }
+
+/* Overriding edittable stuff for dark mode
+*******************************************************************/
+
+.handsontable tr {
+    background: unset;
+    color: unset;
+}
+.table-striped > tbody > tr:nth-of-type(even) {
+    background-color: __background__;
+    color: unset;
+}
+
+.handsontable th,
+.handsontable td {
+    background-color: unset;
+    color: unset;
+}
+
+.handsontable tr:first-child th.htNoFrame,
+.handsontable th:first-child.htNoFrame,
+.handsontable th.htNoFrame {
+    background-color: unset;
+    border-color: unset;
+    color: unset;
+}
+
+.handsontable tbody th.ht__highlight,
+.handsontable thead th.ht__highlight,
+.handsontable.ht__selection--columns thead th.ht__highlight,
+.handsontable.ht__selection--rows tbody th.ht__highlight {
+    background-color: unset;
+    color: unset;
+}
+
+.handsontable td.area {
+    background-color: unset;
+}
+
+.htContextMenu table tbody tr td {
+    background-color: __background_neu__;
+}
+
+option {
+    background-color: __background__;
+}
+
+input[type=button] {
+    color: __text_neu__;
+    background-color: __background_neu__;
+}
+/*.handsontable.listbox .ht_master table {
+    background: unset;
+}*/

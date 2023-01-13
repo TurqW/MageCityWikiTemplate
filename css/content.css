@@ -32,6 +32,11 @@
 */
 /* hx margin-left = (1 / font-size) * .levelx-margin */
 
+#dokuwiki__content {
+    background-color: __background__;
+    border-radius: 1em;
+    padding: .75em;
+}
 
 /*____________ links to wiki pages (addition to _links) ____________*/
 
@@ -77,9 +82,9 @@
     background-color: __background_alt__;
 }
 .dokuwiki table.inline tr:hover th {
-    background-color: __border__;
+    background-color: __background_neu__;
+    color: __text_neu__;
 }
-
 
 /*____________ code ____________*/
 

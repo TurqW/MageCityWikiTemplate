@@ -81,5 +81,42 @@
     left: 1em !important;
 }
 
+.dokuwiki .wrap_infobox {
+    background-color: __card_background__;
+    border-color: __card_border__;
+    color: __card_text__;
+    border-radius: .5em .5em 2em .5em;
+    border-width: .5em;
+    border-style: solid;
+    padding: .75em;
+    width: unset;
+    float: none;
+}
+
+#dw__toc {
+    float: none;
+    width: unset;
+    position: unset;
+}
+
+#dw__toc > div {
+    padding: .2em .5em;
+    position: unset;
+    background-color: @ini_background_alt;
+    color: inherit;
+    border-radius: 0.5em;
+}
+
+.dokuwiki .toggle strong {
+    float: none;
+}
+
+.dokuwiki fieldset {
+    width: unset;
+}
+
+.dokuwiki label.block select, .dokuwiki label.block input.edit {
+    width: unset;
+}
 
 } /* /@media */

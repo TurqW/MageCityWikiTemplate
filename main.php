@@ -143,18 +143,14 @@ $sidebarElement = tpl_getConf('sidebarIsNav') ? 'nav' : 'aside';
             <hr class="a11y" />
 
             <!-- PAGE ACTIONS -->
-            <?php if ($showTools): ?>
-                <nav id="dokuwiki__pagetools" aria-labelledby="dokuwiki__pagetools_heading">
-                    <h3 class="a11y" id="dokuwiki__pagetools_heading"><?php echo $lang['page_tools'] ?></h3>
+            <div id="dokuwiki__pagetools">
+                <h3 class="a11y"><?php echo $lang['page_tools']; ?></h3>
+                <div class="tools">
                     <ul>
-                        <?php if (file_exists(DOKU_INC . 'inc/Menu/PageMenu.php')) {
-                            echo (new \dokuwiki\Menu\PageMenu())->getListItems('action ', false);
-                        } else {
-                            _tpl_pagetools();
-                        } ?>
+                        <?php echo (new \dokuwiki\Menu\PageMenu())->getListItems(); ?>
                     </ul>
-                </nav>
-            <?php endif; ?>
+                </div>
+            </div>
         </div><!-- /wrapper -->
 
         <!-- ********** FOOTER ********** -->

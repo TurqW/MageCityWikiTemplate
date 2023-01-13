@@ -14,18 +14,19 @@ html {
 }
 html,
 body {
-    background-color: __background__;
+    background-color: __background_deep__;
     color: __text__;
-    margin: 0;
-    padding: 0;
 }
 body {
-    font: normal 100%/1.4 Frutiger, Calibri, "Myriad Pro", Myriad, "Nimbus Sans L", Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font: normal 100%/1.4 'Open Sans', sans-serif;
     /* default font size: 100% => 16px; 93.75% => 15px; 87.5% => 14px; 81.25% => 13px; 75% => 12px */
     -webkit-text-size-adjust: 100%;
 }
 
-
+@font-face {
+    font-family: "Magical";
+    src: url("resources/eldermagic.ttf");
+}
 /*____________ headers ____________*/
 
 h1,
@@ -34,11 +35,12 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: Constantia, Utopia, Lucidabright, Lucida, Georgia, "Nimbus Roman No9 L", serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: bold;
-    color: __text_neu__;
-    background-color: inherit;
-    padding: 0;
+    color: __text_alt__;
+    background-color: __background_alt__;
+    border-radius: .5em;
+    padding: .25em;
     line-height: 1.2;
     clear: left; /* ideally 'both', but problems with toc */
 }
@@ -52,8 +54,9 @@ h6 {
 }
 
 h1 {
-    font-size: 2.25em;
-    margin: 0 0 0.444em;
+    margin-top: 0;
+    font-family: 'Magical';
+    font-size: 2.5em;
 }
 h2 {
     font-size: 1.5em;
@@ -176,10 +179,12 @@ ol ol ol ol ol {
 /*____________ tables ____________*/
 
 table {
-    border-collapse: collapse;
     empty-cells: show;
     border-spacing: 0;
     border: 1px solid __border__;
+    border-radius: .75em;
+    border-collapse: separate;
+    overflow: hidden;
 }
 
 caption {
@@ -304,14 +309,15 @@ kbd {
     font-family: Consolas, "Andale Mono WT", "Andale Mono", "Bitstream Vera Sans Mono", "Nimbus Mono L", Monaco, "Courier New", monospace;
     /* same font stack should be used for ".dokuwiki table.diff td" in _diff.css */
     font-size: 1em;
-    background-color: __background_alt__;
-    color: __text__;
+    background-color: __background_neu__;
+    color: __text_neu__;
     direction: ltr;
     text-align: left;
+    padding: .2em;
+    border-radius: .25em;
 }
 pre {
     border: 1px solid __border__;
-    padding: 0 .2em;
     overflow: auto;
     word-wrap: normal;
 }
@@ -386,7 +392,7 @@ meter,
 progress {
     font: inherit;
     color: inherit;
-    /* background-color destroys button look */
+    background-color: inherit;
     line-height: normal;
     margin: 0;
     vertical-align: middle;
@@ -414,9 +420,13 @@ input[type=button],
 input[type=reset],
 input.button,
 button {
+    background-color: __background__;
     cursor: pointer;
     overflow: visible;
+    border: solid __border__;
+    border-radius: 0.5em;
     padding: .1em .4em;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 input[disabled],
